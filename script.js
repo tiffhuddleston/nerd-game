@@ -11,20 +11,41 @@ function buildQuiz() {
 // Display the questions
 // Show results on click, submit the answer and return the number correct out of total number
 
+
+// Change to oop
+class TriviaQuestions {
+    constructor(question, options, correctAnswer) {
+        this.question = question
+        this.options = options
+        this.correctAnswer = correctAnswer
+    }
+}
+const questions =
+    newTriviaQuestion('What planet is Dr. Who from?', ['Jupiter', 'Galifrey', 'Time Lord Home World', 'Titan 1'], 'Galifrey')
+
 // Create quiz questions- array of object literals
-const quizQuestions = [
+const TriviaQuestions = [
     {
-        qeustion: 'What planet is Dr. Who from?',
-        answers: {
+        question: 'What planet is Dr. Who from?',
+        options: {
             a: 'Jupiter',
             b: 'Galifrey',
             c: 'Time Lord Home World',
         },
         correctAnswer: 'b'
     }
-        {
-        qeustion: '',
-        answers: {
+    {
+        question: '',
+        options: {
+            a: '',
+            b: '',
+            c: '',
+        },
+        correctAnswer: 'c'
+    }
+    {
+        question: '',
+        options: {
             a: '',
             b: '',
             c: '',
@@ -32,8 +53,8 @@ const quizQuestions = [
         correctAnswer: 'c'
     }
         {
-        qeustion: '',
-        answers: {
+        question: '',
+        options: {
             a: '',
             b: '',
             c: '',
@@ -45,7 +66,7 @@ const quizQuestions = [
 // way to select an answer- button? checkbox? circle(radio)? or input letter in a form?
 
 // loop to iterate through question array for loop
-for (i = 0; i < quizQuestions.length; i++) {
+for (i = 0; i < TriviaQuestions.length; i++) {
     let response = 'click'
     if (response == correct answer) {
         return 'correct'
@@ -53,3 +74,5 @@ for (i = 0; i < quizQuestions.length; i++) {
         return 'wrong'
     }
 }
+
+// buttons- 

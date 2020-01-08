@@ -8,17 +8,35 @@
   </head>
 
   <body>
-    <h1>Nerd Trivia</h1>
-    <h2>Question</h2>
-    <button id="button1">Answer<span id="btn1"></span></button>
-    <button>Answer</button>
-    <button>Answer</button>
-    <button>Answer</button>
+    <div class="wrapper">
+      <div id="quiz">
+        <h1>Nerd Trivia</h1>
+        <h2>Question</h2>
+        <button id="begin_quiz_btn" onclick="buildQuiz()">Begin</button>
+
+        <div class="container" id="question_div"></div>
+
+        <h3 id="question_title"></h3>
+        <div id="answer_radio_group"></div>
+
+        <div class="buttons">
+          <button
+            id="answer_btn"
+            class=""
+            hidden="true"
+            onclick="processAnswer()"
+          >
+            Answer
+          </button>
+        </div>
+      </div>
+      <div>
+        <h3 id="score_label">Score</h3>
+        <hr />
+        <div id="running_score"></div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
-
-<!-- Make a div for quiz -->
-<!-- Make a button to submit -->
-<!-- Div for results -->
-<!-- make div for question -->

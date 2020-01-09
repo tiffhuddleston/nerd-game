@@ -4,7 +4,7 @@
 
 ## URL
 
-Play Nerd Trivia at this link
+Play Nerd Trivia at this link: https://tiffhuddleston.github.io/nerd-game/
 
 ## Description and Preview
 

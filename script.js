@@ -1,12 +1,25 @@
 // Build Questions
 const allQuestions = [
   new TriviaQuestion(
-    'What planet is Dr. Who from?',
+    'What planet is Dr. Who originally from?',
     ['Jupiter', 'Galifrey', 'Time Lord Home World', 'Titan 1'],
     1
   ),
-  new TriviaQuestion('Who likes bones?', ['Dogs', 'Cats', 'Birds'], 0),
-  new TriviaQuestion('What is best?', ['Sleep', 'Food', 'Work'], 1)
+  new TriviaQuestion(
+    'What is the magic word spoken to summon things in the world of Harry Potter?',
+    ['Accio', 'Alohomora', 'Come here, dammit', 'Expelliarmus'],
+    0
+  ),
+  new TriviaQuestion(
+    'What is the name of the angel guide who helps and saves Lyra and will in Book 3 of the His Dark Materials trilogy?',
+    ['Gabriel', 'Peter', 'Enoch', 'Balthamos'],
+    3
+  ),
+  new TriviaQuestion(
+    'What was the real name of Rorschach in the Watchmen graphic novel?',
+    ['Jasper Davis', 'Alan Moore', 'Walter Kovacs'],
+    2
+  )
 ];
 
 // Build question object

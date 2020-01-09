@@ -1,1 +1,31 @@
-/* background color */
+body {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: white;
+  /* #1d1e1f;*/
+  font-weight: 300;
+  text-align: center;
+  background-color: #b3c5d6;
+  /* background-image: url(https://media.giphy.com/media/TZf4ZyXb0lXXi/source.gif); */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  align: center;
+  /* width: 500px; */
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #6d8397;
+}
+h1 {
+  color: black;
+  background-color: white;
+}
+
+#answer_radio_group {
+  text-align: left;
+  padding: 30px;
+}

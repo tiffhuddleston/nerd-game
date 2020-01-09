@@ -6,7 +6,7 @@ const allQuestions = [
     1
   ),
   new TriviaQuestion('Who likes bones?', ['Dogs', 'Cats', 'Birds'], 0),
-  new TriviaQuestion('What is best?', ['Sleep', 'Food', 'Work'], 0)
+  new TriviaQuestion('What is best?', ['Sleep', 'Food', 'Work'], 1)
 ];
 
 // Build question object
@@ -28,15 +28,15 @@ function Quiz(questions) {
 }
 // Prototype function to get question div and submit answer button
 Quiz.prototype.buildQuestion = function(index) {
-  var title_div = document.getElementById('question_title');
-  var answer_radios = document.getElementById('answer_radio_group');
+  let title_div = document.getElementById('question_title');
+  let answer_radios = document.getElementById('answer_radio_group');
   // Put questions and answers into quiz
-  var insertQuestion = this.questions[index];
+  let insertQuestion = this.questions[index];
   title_div.innerHTML = insertQuestion.question;
   // Create radio button response
-  var radioHtml = '';
-  var optionIndex = 0;
-  //   Got help on this logic and syntax from friend
+  let radioHtml = '';
+  let optionIndex = 0;
+  //   Got help on this logic and syntax from friend, gave radio input option to each possible answer
   insertQuestion.options.forEach(
     option => (
       (radioHtml += `
@@ -55,7 +55,7 @@ Quiz.prototype.buildQuestion = function(index) {
   answer_radios.innerHTML = radioHtml;
 };
 
-// Quiz function to iterate through questions
+// Quiz function to move through questions
 Quiz.prototype.getQuestionIndex = function() {
   return this.questions[this.questionIndex];
 };
@@ -64,6 +64,7 @@ Quiz.prototype.getQuestionIndex = function() {
 Quiz.prototype.isOver = function() {
   return this.questions.length === this.questionIndex;
 };
+let restart = false;
 
 // Quiz function to tally correct answers compared to # of questions and keep track in running_score div to display progress
 Quiz.prototype.guess = function(answer) {
@@ -78,31 +79,42 @@ Quiz.prototype.guess = function(answer) {
     let scoreLabel = document.getElementById('score_label');
     scoreLabel.innerHTML = 'Final Score';
     document.getElementById('begin_quiz_btn').hidden = false;
+    document.getElementById('question_title').hidden = true;
+    document.getElementById('answer_radio_group').hidden = true;
+    document.getElementById('answer_btn').hidden = true;
+    theQuiz.questionIndex = 0;
+    this.score = 0;
+    restart = true;
     return;
   }
   this.buildQuestion(this.questionIndex);
 };
 
-var theQuiz = new Quiz(allQuestions);
-
+let theQuiz = new Quiz(allQuestions);
 // Build quiz itself- populate the questions
 function buildQuiz() {
-  this.theQuiz.buildQuestion(0);
-  // Shows answer button
+  theQuiz.buildQuestion(0);
+  // Shows answer button, questions, choice options
   document.getElementById('answer_btn').hidden = false;
+  document.getElementById('question_title').hidden = false;
+  document.getElementById('answer_radio_group').hidden = false;
   // Hides 'begin quiz' button during game play
   document.getElementById('begin_quiz_btn').hidden = true;
   // Shows initial score
   let keepScore = document.getElementById('running_score');
   keepScore.innerHTML = `0/${allQuestions.length}`;
+  if (restart === true) {
+    document.getElementById('score_label').innerHTML = 'Score';
+    restart = false;
+  }
 }
 
 // Checks for correct answer,
 function processAnswer() {
-  var inserAnswer = '';
-  var radio_group = document.getElementById('answer_radio_group');
-  var radios = radio_group.getElementsByTagName('input');
-  for (var i = 0; i < radios.length; ++i) {
+  //   var insertAnswer = '';
+  let radio_group = document.getElementById('answer_radio_group');
+  let radios = radio_group.getElementsByTagName('input');
+  for (let i = 0; i < radios.length; ++i) {
     if (radios[i].checked) {
       insertAnswer = parseInt(radios[i].value);
       break;

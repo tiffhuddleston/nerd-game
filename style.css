@@ -2,7 +2,6 @@ body {
   font-size: 20px;
   font-family: sans-serif;
   color: white;
-  /* #1d1e1f;*/
   font-weight: 300;
   text-align: center;
   background-color: #b3c5d6;
@@ -20,11 +19,19 @@ body {
   background-color: #6d8397;
 }
 h1 {
-  color: white;
+  color: black;
   /* background-color: white; */
 }
 
 #answer_radio_group {
   text-align: left;
   padding: 30px;
+}
+#answer_btn,
+#begin_quiz_btn {
+  border-radius: 12px;
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  border: black;
 }

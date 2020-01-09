@@ -1,3 +1,11 @@
+let questionHeading = document.getElementById('question_heading');
+let beginQuizButton = document.getElementById('begin_quiz_btn');
+let answerButton = document.getElementById('answer_btn');
+let questionContainer = document.getElementById('question_title');
+let answerContainer = document.getElementById('answer_radio_group');
+let scoreLabel = document.getElementById('score_label');
+let keepScore = document.getElementById('running_score');
+
 // Build Questions
 const allQuestions = [
   new TriviaQuestion(
@@ -41,15 +49,13 @@ function Quiz(questions) {
 }
 // Prototype function to get question div and submit answer button
 Quiz.prototype.buildQuestion = function(index) {
-  let title_div = document.getElementById('question_title');
-  let answer_radios = document.getElementById('answer_radio_group');
   // Put questions and answers into quiz
   let insertQuestion = this.questions[index];
-  title_div.innerHTML = insertQuestion.question;
+  questionContainer.innerHTML = insertQuestion.question;
   // Create radio button response
   let radioHtml = '';
   let optionIndex = 0;
-  //   Got help on this logic and syntax from friend, gave radio input option to each possible answer
+  //   Got help on this logic and syntax from friend, gave radio input option to each possible answer and answer option text inserted as object literal
   insertQuestion.options.forEach(
     option => (
       (radioHtml += `
@@ -65,7 +71,7 @@ Quiz.prototype.buildQuestion = function(index) {
     )
   );
   //   Answer options into div with radio response
-  answer_radios.innerHTML = radioHtml;
+  answerContainer.innerHTML = radioHtml;
 };
 
 // Quiz function to move through questions
@@ -83,18 +89,18 @@ let restart = false;
 Quiz.prototype.guess = function(answer) {
   if (this.getQuestionIndex().correctAnswer(answer)) {
     this.score++;
-    let keepScore = document.getElementById('running_score');
     keepScore.innerHTML = `${this.score}/${allQuestions.length}`;
   }
   //   Ends game, shows score, unhides button to begin quiz if player wants to restart
   this.questionIndex++;
   if (this.isOver()) {
-    let scoreLabel = document.getElementById('score_label');
     scoreLabel.innerHTML = 'Final Score';
-    document.getElementById('begin_quiz_btn').hidden = false;
-    document.getElementById('question_title').hidden = true;
-    document.getElementById('answer_radio_group').hidden = true;
-    document.getElementById('answer_btn').hidden = true;
+    beginQuizButton.innerHTML = 'Try Again?';
+    beginQuizButton.hidden = false;
+    questionHeading.hidden = true;
+    questionContainer.hidden = true;
+    answerContainer.hidden = true;
+    answerButton.hidden = true;
     theQuiz.questionIndex = 0;
     this.score = 0;
     restart = true;
@@ -107,26 +113,22 @@ let theQuiz = new Quiz(allQuestions);
 // Build quiz itself- populate the questions
 function buildQuiz() {
   theQuiz.buildQuestion(0);
-  // Shows answer button, questions, choice options
-  document.getElementById('answer_btn').hidden = false;
-  document.getElementById('question_title').hidden = false;
-  document.getElementById('answer_radio_group').hidden = false;
-  // Hides 'begin quiz' button during game play
-  document.getElementById('begin_quiz_btn').hidden = true;
+  // Shows answer button, questions, choice options, hides begin quiz button during gameplay
+  answerButton.hidden = false;
+  questionContainer.hidden = false;
+  answerContainer.hidden = false;
+  beginQuizButton.hidden = true;
   // Shows initial score
-  let keepScore = document.getElementById('running_score');
   keepScore.innerHTML = `0/${allQuestions.length}`;
   if (restart === true) {
-    document.getElementById('score_label').innerHTML = 'Score';
+    scoreLabel.innerHTML = 'Score';
     restart = false;
   }
 }
 
 // Checks for correct answer,
 function processAnswer() {
-  //   var insertAnswer = '';
-  let radio_group = document.getElementById('answer_radio_group');
-  let radios = radio_group.getElementsByTagName('input');
+  let radios = answerContainer.getElementsByTagName('input');
   for (let i = 0; i < radios.length; ++i) {
     if (radios[i].checked) {
       insertAnswer = parseInt(radios[i].value);

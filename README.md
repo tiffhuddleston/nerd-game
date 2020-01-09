@@ -1,47 +1,45 @@
 # Nerd Trivia
 
-## Description
+## URL
 
-- This is trivia for all the dorks out there.
-- What problem(s) your projects solves
-
----
-
-## Brief Example
-
-This could be a code snippet showing how your project should be used (if it is meant to be integrated into another app)
-This could be a screenshot of your project running in the browser (if it is a stand-alone application)
+Play Nerd Trivia at this link
 
 ---
 
-## List of Features / User Stories
+## Description and Preview
 
-- This typically will be a short list of the features / user stories that you planned during the development phase of the project
-- To provide more detail, you can show how you categorized these features into Bronze (MVP), Silver, and Gold Levels and indicate which features you complete / have yet to complete
+This is trivia for all the dorks out there (I am one of you). Since I love all forms of trivial knowledge about science-fiction television, movies, books, graphic novels, etc., I decided to make a general quiz rather than a quiz on one specific topic.
+
+---
+
+## User Stories
+
+Upon loading the game, the user will see a begin button. I did not feel the need to include explicit instructions as to game play since most users will have plenty of experience with the nature, format, and procedures of a simple online quiz. The user will answer the multiple choice questions by slecting their choice for the answer and clicking a submit answer button. When the player has cycled through all of the questions (the number of questions in the quiz is displayed in a counter at the bottom of the page), their final score will be displayed with the option to begin the quiz again.
 
 ---
 
 ## List of Technologies Used
 
-Often you will want to list the technologies you used to create the project.
-This typically would consist of all primary languages, frameworks, and libraries your app is composed of
-This is particularly important when it comes to recruiters scanning your projects for keywords
+This game was created with HTML5, CSS, and Javascript.
 
 ---
 
 ## Installation Instructions / Getting Started
 
-This section should walk a reader, step by step, through the process of setting up your project
-For a tool meant to be integrated into other projects, this would likely outline the process of installing and accessing this tool in your project
-For an application, this would likely outline the process of forking, cloning, and starting the app locally
+The game can be played at the above URL or, if you chose to have the game saved locally, the user can download the nerd-game folder which contains the index.html, stye.css, and script.js files used to play the game, add or remove questions, change colors and layouts, etc. The player should open the local file in a web browser(preferably Google Chrome) and play from there if desired.
 
 ---
 
-## Contribution Guidelines
+## Contributions and Thanks
 
-This section should offer guidance on where and how users can contribute to your code, identify bugs, and propose improvements
-Good links to include are:
-A link to the project's main repository
-A link to the project's issue tracker
+My friend Josh Tinker helped me out on much of the functionality of my code, syntax, and logic, and I cannot thank him enough. I don't know if I could have finished this without him.
 
-`Inline code has back-ticks`
+Qusai Fares helped me fix a couple of bugs. Based on the speed and accuracy with which he located the problems and led me to solutions, he may, in fact, be the intellectual equal of Elon Musk. I take this opportunity to apologize to Qusai for ever doubting his claims.
+
+Also Thank you to the endless, ENDLESS number of games out there that I looked to for everything from examples of aesthetics to score-keeping functionality to event handling.
+
+---
+
+## Future Features
+
+I would like to expand the functionality to contain multiple quizzes accessed from the begin page and add some critical messages to accompany the final score such as "Wow, you be smart," or "Read a book, sheesh.".

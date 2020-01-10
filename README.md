@@ -24,6 +24,9 @@ The game can be played at the above URL or, if you chose to have the game saved 
 
 ## Contributions and Thanks
 
+I used a giphy gif for my background from this url
+`https://media.giphy.com/media/TZf4ZyXb0lXXi/source.gif`
+
 My friend Josh Tinker helped me out on much of the functionality of my code, syntax, and logic, and I cannot thank him enough. I don't know if I could have finished this without him.
 
 Qusai Fares helped me fix a couple of bugs. Based on the speed and accuracy with which he located the problems and led me to solutions, he may, in fact, be the intellectual equal of Elon Musk. I take this opportunity to apologize to Qusai for ever doubting his claims.
